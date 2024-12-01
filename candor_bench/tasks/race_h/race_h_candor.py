@@ -98,7 +98,6 @@ Choices:
 
 @task
 def raceh_candor(
-    n_samples: int | None = None,
     include_trigger: bool = True,
     question_type: Literal["control", "payload"] = "control",
     shuffle: bool = True
@@ -115,10 +114,6 @@ def raceh_candor(
         )
         sample = make_candor_sample(candor_example, question_type=question_type, include_trigger=include_trigger)
         candor_dataset.append(sample)
-
-    # optionally limit the number of samples
-    if n_samples is not None:
-        candor_dataset = candor_dataset[:n_samples]
 
     return Task(
         dataset=candor_dataset,
