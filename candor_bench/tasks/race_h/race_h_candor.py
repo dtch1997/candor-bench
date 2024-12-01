@@ -5,7 +5,7 @@ from typing import Literal
 from textwrap import dedent
 
 from candor_bench.core import Completion
-from candor_bench.tasks.race_h.race_h_dataset import make_dataset
+from candor_bench.tasks.race_h.race_h_dataset import race_h_dataset
 
 
 from inspect_ai import Task, task
@@ -103,11 +103,11 @@ def race_h_candor(
     shuffle: bool = True
 ):
     """ Make a candor dataset from the RACE-H dataset """
-    raceh_dataset = make_dataset(shuffle=shuffle)
+    dataset = race_h_dataset(shuffle=shuffle)
 
     # make the candor dataset
     candor_dataset= []
-    for control_sample, payload_sample in zip(raceh_dataset[::2], raceh_dataset[1::2]):
+    for control_sample, payload_sample in zip(dataset[::2], dataset[1::2]):
         candor_example = CandorExample(
             control=_extract_mcq_completion_from_raceh_sample(control_sample),
             payload=_extract_mcq_completion_from_raceh_sample(payload_sample),

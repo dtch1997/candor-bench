@@ -35,13 +35,13 @@ Choices:
 # @task
 def race_h() -> Task:
     return Task(
-        dataset=make_dataset(),
+        dataset=race_h_dataset(),
         solver=[multiple_choice(template=TEMPLATE)],
         scorer=choice(),
         config=GenerateConfig(temperature=0.0),
     )
 
-def make_dataset(
+def race_h_dataset(
     shuffle: bool = True,
 ) -> Dataset:
     return hf_dataset(
@@ -64,5 +64,5 @@ def record_to_sample(record: dict[str, Any]) -> Sample:
 
 
 if __name__ == "__main__":
-    dataset = make_dataset()
+    dataset = race_h_dataset()
     print(dataset[0])
