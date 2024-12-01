@@ -31,8 +31,8 @@ Choices:
 {choices}
 """.strip()
 
-
-@task
+# NOTE: Uncomment to enable the task
+# @task
 def race_h() -> Task:
     return Task(
         dataset=make_dataset(),

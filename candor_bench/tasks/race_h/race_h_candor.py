@@ -5,7 +5,7 @@ from typing import Literal
 from textwrap import dedent
 
 from candor_bench.core import Completion
-from candor_bench.tasks.race_h.race_h import make_dataset
+from candor_bench.tasks.race_h.race_h_dataset import make_dataset
 
 
 from inspect_ai import Task, task
@@ -97,7 +97,7 @@ Choices:
 """.strip()
 
 @task
-def raceh_candor(
+def race_h_candor(
     include_trigger: bool = True,
     question_type: Literal["control", "payload"] = "control",
     shuffle: bool = True
