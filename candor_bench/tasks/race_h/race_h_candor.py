@@ -14,9 +14,6 @@ from inspect_ai.model import GenerateConfig
 from inspect_ai.scorer import choice
 from inspect_ai.solver import multiple_choice
 
-from dotenv import load_dotenv
-load_dotenv()
-
 @dataclass
 class CandorExample:
     control: Completion
