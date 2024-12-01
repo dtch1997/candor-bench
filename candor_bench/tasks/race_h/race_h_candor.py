@@ -5,7 +5,7 @@ from typing import Literal
 from textwrap import dedent
 
 from candor_bench.core import Completion
-from candor_bench.datasets.race_h import make_dataset
+from candor_bench.tasks.race_h.race_h import make_dataset
 
 
 from inspect_ai import Task, task
