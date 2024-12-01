@@ -5,7 +5,7 @@ description = "Default template for PDM package"
 authors = [
     {name = "Daniel Tan", email = "dtch1997@users.noreply.github.com"},
 ]
-dependencies = ["datasets>=3.1.0", "inspect-ai>=0.3.47", "ipykernel>=6.29.5"]
+dependencies = ["datasets>=3.1.0", "inspect-ai>=0.3.47", "ipykernel>=6.29.5", "openai>=1.55.3", "python-dotenv>=1.0.1"]
 requires-python = ">=3.12"
 readme = "README.md"
 license = {text = "MIT"}
